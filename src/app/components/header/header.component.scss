@@ -1,0 +1,9 @@
+.menu {
+  .menu-item {
+    @apply flex h-full items-center border-b-4 border-transparent transition-all hover:border-b-4 hover:border-[#2F2C26] hover:font-extrabold;
+  }
+
+  .menu-item.active {
+    @apply border-b-4 border-[#2F2C26] font-extrabold;
+  }
+}

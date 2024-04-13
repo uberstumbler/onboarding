@@ -1,0 +1,27 @@
+<header class="flex h-[56px] items-center gap-2 bg-white px-4 sm:h-[72px] sm:gap-8">
+  <a [routerLink]="['/']" class="h-[32px] sm:h-[40px]"> <img src="/assets/inyova-logo.svg" alt="Inyova" class="h-full w-auto" /></a>
+  <div class="h-full flex-1 sm:ml-6">
+    <nav class="hover:border-bottom-[4px] menu hidden h-full gap-8 text-sm text-[#2F2C26] sm:flex">
+      <a [routerLink]="['strategy']" class="menu-item" [ngClass]="{ active: activeMenu() === 'strategy' }"> Strategy </a>
+      <a [routerLink]="['personal-detail']" class="menu-item" [ngClass]="{ active: activeMenu() === 'personal-detail' }">Next steps</a>
+    </nav>
+  </div>
+
+  <button class="flex h-12 w-12 items-center justify-center rounded-full sm:hidden">
+    <img src="/assets/icons/help-icon.svg" alt="Help" />
+  </button>
+
+  <button class="hidden items-center gap-1 rounded-full bg-[#F8F6F1] px-4 py-2 text-sm sm:flex">
+    <span class="flex h-6 w-6 items-center justify-center">
+      <img src="/assets/icons/tree.svg" alt="icon" aria-hidden="true" />
+    </span>
+    <span>Inyova investment</span>
+    <span class="flex h-6 w-6 items-center justify-center">
+      <img src="/assets/icons/chevron_down.svg" alt="" />
+    </span>
+  </button>
+
+  <button class="flex h-10 w-10 items-center justify-center">
+    <img src="/assets/icons/menu.svg" alt="" />
+  </button>
+</header>
