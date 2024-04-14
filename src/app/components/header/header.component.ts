@@ -19,10 +19,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routerEventSubscrition = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        console.log('hhhh');
         this.activeMenu.set(this.router.url.split('/')[1]);
       }
-      console.log('🚀 ~ HeaderComponent ~ this.routerEventSubscrition=this.router.events.subscribe ~ this.router.url:', this.router.url);
     });
   }
 
