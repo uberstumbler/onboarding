@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   imports: [],
   templateUrl: './strategy.component.html',
   styleUrl: './strategy.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StrategyComponent {
   private readonly router: Router = inject(Router);

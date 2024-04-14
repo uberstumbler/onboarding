@@ -58,4 +58,12 @@
       </span>
     </div>
   </form>
+
+  @if (isErrorVisible()) {
+    <div
+      @fadeIn
+      class="fixed bottom-10 h-[45px] w-[343px] rounded bg-[#FF6348] px-4 py-3 text-sm text-white shadow-[1px_2px_2px_0px_#00000033] sm:bottom-[60px] sm:right-[40px] sm:w-[268px]">
+      Some fields are missing
+    </div>
+  }
 </div>
