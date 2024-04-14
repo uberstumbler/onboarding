@@ -1,1 +1,61 @@
-<p>personal-detail works!</p>
+<div class="mx-auto mt-10 flex w-[343px] flex-col gap-5 pb-8 sm:w-[390px]">
+  <h1 class="text-[32px] leading-10">Personal Details</h1>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="flex w-full flex-col gap-6 bg-white p-3 text-sm leading-5 text-[#2F2C26]">
+      <!-- gender -->
+      <div class="input-field">
+        <label for="gender" [ngClass]="{ invalid: form.get('gender')?.hasError('required') }">Gender</label>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1">
+            <input type="radio" formControlName="gender" id="male" value="male" />
+            <label for="male">Male</label>
+          </div>
+          <div class="flex items-center gap-1">
+            <input type="radio" formControlName="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <!-- ./gender -->
+      <!-- first name -->
+      <div class="input-field">
+        <label for="firstName" [ngClass]="{ invalid: form.get('firstName')?.hasError('required') }">First Name</label>
+        <input type="text" formControlName="firstName" id="firstName" placeholder="First name (as shown in passport / ID)" />
+      </div>
+      <!-- ./first name -->
+      <!-- last name -->
+      <div class="input-field">
+        <label for="lastName" [ngClass]="{ invalid: form.get('lastName')?.hasError('required') }">Last Name</label>
+        <input type="text" formControlName="lastName" id="lastName" placeholder="Last name (as shown in passport / ID)" />
+      </div>
+      <!-- ./last name -->
+      <!-- date of birth -->
+      <div formGroupName="dateOfBirth" class="input-field">
+        <label for="">Date of birth</label>
+        <div class="flex gap-6">
+          <input type="number" formControlName="day" id="day" placeholder="Day" class="w-[64px]" />
+          <input type="number" formControlName="month" id="month" placeholder="Month" class="w-[64px]" />
+          <input type="number" formControlName="year" id="year" placeholder="Year" class="w-[64px]" />
+        </div>
+      </div>
+      <!-- ./date of birth -->
+      <!-- nationality -->
+      <div class="input-field">
+        <label for="nationality" [ngClass]="{ invalid: form.get('nationality')?.hasError('required') }">Nationality</label>
+        <input type="text" formControlName="nationality" id="nationality" placeholder="Nationality" />
+      </div>
+      <!-- ./nationality -->
+    </div>
+
+    <button type="submit" class="my-5 flex h-[50px] w-full items-center justify-center bg-[#2F2C26] text-sm font-extrabold text-white">Continue</button>
+
+    <div class="flex items-center gap-2">
+      <img src="/assets/icons/shield_with_checkmark.svg" alt="" />
+      <span class="text-sm leading-5 text-[#2F2C26]">
+        <span>Inyova guarantees highest investment standards. </span>
+        <a href="" class="font-extrabold underline">Learn more. </a>
+      </span>
+    </div>
+  </form>
+</div>

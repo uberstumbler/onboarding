@@ -1,3 +1,40 @@
 :host {
-  @apply flex flex-1 flex-col;
+  @apply flex-1;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='radio'] {
+  @apply h-4 w-4 appearance-none rounded-full border-2 border-[#2f2c26]  text-[#2f2c26];
+}
+
+input[type='radio']:checked {
+  @apply bg-[#2f2c26];
+}
+
+.input-field {
+  @apply flex flex-col gap-2;
+}
+
+input {
+  @apply border-b border-[#E5E5E5] py-1 focus:border-[#2F2C26];
+
+  &:focus {
+    outline: none;
+  }
+}
+
+form.ng-submitted {
+  label.invalid,
+  .input-field.ng-invalid > label {
+    @apply text-[#FF6348];
+  }
+
+  input[type='radio'].ng-invalid {
+    @apply border-[#FF6348];
+  }
 }
